@@ -49,8 +49,15 @@ public class Movement : MonoBehaviour
 
     private bool CheckForWall(Vector3 direction)
     {
+        // Bit shift the index of the layer (8) to get a bit mask
+        int layerMask = 1 << 6;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        layerMask = ~layerMask;
+
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(direction), out hit, 1))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(direction), out hit, 1, layerMask))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(direction) * hit.distance, Color.yellow);
             Debug.Log("Did Hit");
