@@ -6,7 +6,9 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float Speed = 1;
     [SerializeField] private Transform Model;
-
+    [Space]
+    [SerializeField] private DieManager DieManager;
+    
     private bool Moving = false;
 
     // Update is called once per frame
@@ -84,6 +86,7 @@ public class Movement : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
+        DieManager.UpdateNumber();
         Moving = false;
     }
 }
