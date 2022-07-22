@@ -1,0 +1,45 @@
+Die:
+- Smooth, satifying movement
+- Properly moving from the corner pivots
+
+- Camera smoothing
+
+- Casino aesthetic?
+- walls could be card stacks
+- takes place on a giant poker table
+
+- Stats after player finishes game (amount of moves, time)
+- dice falls down (with speed lines) as GUI shows stats
+- dice keeps falling until player hits button, takes player back to main menu
+
+- main menu
+- start game, instructions, credits, quit game
+- probably not options cuz that's out of scope
+
+- How do I switch between levels? as to not confuse or overwhelm players
+
+Playtesting:
+- fixed a softlock (thanks Clone)
+- Arina wanted to have a scene reload key
+- Z-fighting on doors
+
+
+Level design:
+- could make a puzzle where I open 2 doors at once
+- Level where you wrap around into a different level
+
+- music
+- sound design
+- level assets (getting pretty far with that tbh)
+
+Credits:
+- kevin macleod - music
+- Card stack - Arina
+- Playtesting - Arina, Clone
+- Concepting - Jodie, Arina, Clone, Sophie, Spud
+- Casino stuff asset pack - https://assetstore.unity.com/packages/3d/props/free-little-games-asset-pack-125089
+- Casino table - https://sketchfab.com/3d-models/pokertable-round-5c335b7eff684213bd955b05ef90a354
+- Game design, level design, programming - Sven
+
+For later:
+- Expand AudioManager to allow for a sound to play on start, but be muted (for dynamic music)

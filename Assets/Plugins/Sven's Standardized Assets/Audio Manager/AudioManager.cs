@@ -461,7 +461,11 @@ public class AudioManager : MonoBehaviour
     {
         Sound sound = GetSound(name);
 
-        sound.Source.Play();
+        if (!sound.Source.isPlaying)
+        {
+            print("Playing " + name);
+            sound.Source.Play();
+        }
         StartCoroutine(_SetVolume(sound, 0, 1, time));
     }
 
@@ -473,7 +477,7 @@ public class AudioManager : MonoBehaviour
         Sound sound = GetSound(name);
 
         StartCoroutine(_SetVolume(sound, 1, 0, time));
-        StartCoroutine(_Stop(sound, time));
+        //StartCoroutine(_Stop(sound, time));
     }
 
     private IEnumerator _SetVolume(Sound sound, float from, float to, float time)
@@ -497,8 +501,8 @@ public class AudioManager : MonoBehaviour
 
         if (end == 0)
         {
-            sound.Source.Stop();
-            sound.SetVolume(MasterVolume * typeVolume * sound.MaxVolume * 1);
+            //sound.Source.Stop();
+            //sound.SetVolume(MasterVolume * typeVolume * sound.MaxVolume * 1);
         }
         else
         {
